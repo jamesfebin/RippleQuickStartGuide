@@ -1,7 +1,5 @@
 'use strict';
 const RippleAPI = require('ripple-lib').RippleAPI;
-const decodeAddress = require('ripple-address-codec').decodeAddress;
-const createHash = require('crypto').createHash;
 
 const sender = 'r41sFTd4rftxY1VCn5ZDDipb4KaV5VLFy2';
 const secret = 'sptkAoSPzHq8mKLWrjU33EDj7v96u';
@@ -13,7 +11,7 @@ api.connect().then(() => {
   console.log('Connected');
   return api.prepareEscrowExecution(sender, {
       "owner": sender,
-      "escrowSequence": 67,
+      "escrowSequence": 67
   }, options);
 
 }).then(prepared => {
